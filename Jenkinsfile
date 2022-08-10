@@ -28,7 +28,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                sh 'docker build -t example/example-app .'
+                sh 'docker build -t app .'
                     echo 'Build Docker image'
                 }
             }            
@@ -43,7 +43,7 @@ pipeline {
         stage('Run local'){
             steps {
                 script {
-                    sh 'docker run -d -p 8040:8086 example/example-app'
+                    sh 'docker run -d -p 8060:8086 app'
                 }
             }            
         }
